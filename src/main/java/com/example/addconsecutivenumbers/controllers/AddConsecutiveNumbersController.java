@@ -13,6 +13,7 @@ public class AddConsecutiveNumbersController {
     @GetMapping("api/add-consecutive-numbers")
     public ServiceResponse addConsecutiveNumbers(@RequestParam("target") long target) {
         long result = LongStream.rangeClosed(1, target)
+                .parallel()
                 .reduce(0, Long::sum);
         return new ServiceResponse(result);
     }
