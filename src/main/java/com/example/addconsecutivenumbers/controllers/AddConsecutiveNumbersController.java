@@ -10,7 +10,7 @@ import java.util.stream.LongStream;
 @RestController
 public class AddConsecutiveNumbersController {
 
-    @GetMapping("api/v1/add-consecutive-numbers")
+    @GetMapping("api/add-consecutive-numbers")
     public ServiceResponse addConsecutiveNumbers(@RequestParam("target") long target) {
         long result = LongStream.rangeClosed(1, target)
                 .reduce(0, Long::sum);
